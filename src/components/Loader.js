@@ -1,5 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import styled from 'styled-components';
+import * as anime from 'animejs';
+
 import { IconLoader } from '../components/icons';
 
 const StyledLoader = styled.div`
@@ -37,7 +39,7 @@ const Loader = ({ finishLoading }) => {
   const [isMounted, setIsMounted] = useState(false);
 
   const animate = () => {
-    const loader = anime.timeline({
+    const loader = anime.createTimeline({
       complete: () => finishLoading(),
     });
 
@@ -47,7 +49,7 @@ const Loader = ({ finishLoading }) => {
         delay: 300,
         duration: 1500,
         easing: 'easeInOutQuart',
-        strokeDashoffset: [anime.setDashoffset, 0],
+        strokeDashoffset: [anime, 0],
       })
       .add({
         targets: '#logo #B',

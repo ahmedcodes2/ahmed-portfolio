@@ -4,8 +4,8 @@ import { CSSTransition, TransitionGroup } from 'react-transition-group';
 import styled, { css } from 'styled-components';
 import { navLinks } from '../config';
 import { loaderDelay } from '../utils';
-import { useScrollDirection, usePrefersReducedMotion } from '@hooks';
-// import { Menu } from './components';
+import { useScrollDirection, usePrefersReducedMotion } from '../hooks';
+import { Menu } from '../components';
 import { IconLogo, IconHex } from './icons';
 
 const StyledHeader = styled.header`
@@ -256,7 +256,7 @@ const Nav = ({ isHome }) => {
                 </TransitionGroup>
               </ol>
 
-              {/* <TransitionGroup component={null}>
+              <TransitionGroup component={null}>
                 {isMounted && (
                   <CSSTransition classNames={fadeDownClass} timeout={timeout}>
                     <div style={{ transitionDelay: `${isHome ? navLinks.length * 100 : 0}ms` }}>
@@ -264,7 +264,7 @@ const Nav = ({ isHome }) => {
                     </div>
                   </CSSTransition>
                 )}
-              </TransitionGroup> */}
+              </TransitionGroup>
             </StyledLinks>
 
             <TransitionGroup component={null}>
