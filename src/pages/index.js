@@ -173,4 +173,11 @@ const IndexPage = () => {
 
 export default IndexPage
 
-export const Head = () => <title>Home Page</title>
+export const Head = () => {
+return(
+  <>
+  <title>Home Page</title>
+  <meta></meta>
+  </>
+)
+}
